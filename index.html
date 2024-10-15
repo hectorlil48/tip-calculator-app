@@ -16,6 +16,46 @@
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
+    <header>
+      <img src="./images/logo.svg" alt="logo" />
+    </header>
+
+    <main class="container">
+      <div class="inputs-section">
+        <label for="bill">Bill</label>
+        <div class="bill-input">
+          <input type="text" placeholder="0" id="bill" />
+          <img src="./images/icon-dollar.svg" alt="dollar sign" />
+        </div>
+
+        <label for="tip">Select Tip %</label>
+        <div class="tip-grid">
+          <button>5%</button>
+          <button>10%</button>
+          <button>15%</button>
+          <button>25%</button>
+          <button>50%</button>
+          <input type="number" placeholder="Custom" id="custom" />
+        </div>
+
+        <label for="people">Number of People</label>
+        <div class="people-input">
+          <input type="text" placeholder="0" id="people" />
+          <img src="./images/icon-person.svg" alt="person icon" />
+        </div>
+      </div>
+      <div class="tip-section">
+        <div class="tip-amount">
+          <p>Tip Amount <br /><span>/ person</span></p>
+          <p id="tip">$0.00</p>
+        </div>
+        <div class="total-amount">
+          <p>Total <br /><span>/ person</span></p>
+          <p class="total">$0.00</p>
+        </div>
+        <button class="reset-btn" id="resetBtn">Reset</button>
+      </div>
+    </main>
     <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
