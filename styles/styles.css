@@ -4,10 +4,11 @@
   /* Colors */
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
-  --outline-cyan: hsl(172, 67%, 45%);
+  --outline-cyan: hsl(172, 67%, 46%);
   --custom-grayish: hsl(180, 18%, 40%);
   --grayish-cyan: hsl(183, 15%, 56%);
   --light-grayish-cyan: hsl(185, 41%, 84%);
+  --hover-grayish-cyan: hsl(172, 61%, 77%);
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
 }
@@ -54,7 +55,7 @@ header img {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   overflow: hidden;
-  padding: 32px;
+  padding: 32px 24px;
 }
 
 label {
@@ -77,11 +78,13 @@ label {
   text-align: right;
   padding: 6px 17px 6px 19px;
   border: none;
+  border-radius: 5px;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--very-dark-cyan);
   background-color: var(--very-light-grayish-cyan);
-  outline: var(--outline-cyan);
+  outline-color: var(--outline-cyan);
+  cursor: pointer;
 }
 
 .bill-input input::placeholder,
@@ -135,6 +138,11 @@ label {
   cursor: pointer;
 }
 
+.tip-grid button:where(:hover, :focus, :active) {
+  background-color: var(--hover-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+
 .tip-section {
   background-color: var(--very-dark-cyan);
   color: var(--white);
@@ -169,6 +177,24 @@ label {
   font-size: 2rem;
   letter-spacing: -0.67px;
   color: var(--outline-cyan);
+}
+
+.reset-btn {
+  width: 100%;
+  font-size: 1.26rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--outline-cyan);
+  color: var(--very-dark-cyan);
+  padding: 9px 32px;
+  margin: 0 auto;
+}
+
+.reset-btn:where(:hover, :focus) {
+  background-color: var(--hover-grayish-cyan);
 }
 /* .attribution {
     font-size: 11px;
