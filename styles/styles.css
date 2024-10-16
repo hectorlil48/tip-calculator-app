@@ -4,7 +4,9 @@
   /* Colors */
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
-  --grayish-cyan: hsl(184, 14%, 56%);
+  --outline-cyan: hsl(172, 67%, 45%);
+  --custom-grayish: hsl(180, 18%, 40%);
+  --grayish-cyan: hsl(183, 15%, 56%);
   --light-grayish-cyan: hsl(185, 41%, 84%);
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
@@ -27,18 +29,14 @@ html {
   text-size-adjust: none;
 }
 
+button,
+input {
+  font-family: inherit;
+}
+
 img {
   display: block;
   max-width: 100%; /* Ensure media elements are responsive */
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
 }
 
 body {
@@ -47,6 +45,131 @@ body {
   font-family: "Space Mono", serif;
 }
 
+header img {
+  margin: 50px auto 41px;
+}
+
+.container {
+  background-color: var(--white);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  overflow: hidden;
+  padding: 32px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-grayish-cyan);
+  margin-bottom: 6px;
+}
+
+.bill-input,
+.people-input {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.bill-input input,
+.people-input input,
+.tip-grid input {
+  width: 100%;
+  text-align: right;
+  padding: 6px 17px 6px 19px;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+  background-color: var(--very-light-grayish-cyan);
+  outline: var(--outline-cyan);
+}
+
+.bill-input input::placeholder,
+.people-input input::placeholder {
+  color: var(--very-dark-cyan);
+}
+
+.tip-grid input {
+  color: var(--custom-grayish);
+}
+
+.tip-grid input::placeholder {
+  color: var(--custom-grayish);
+}
+
+.bill-input img {
+  width: 9.84px;
+  height: 15.46px;
+}
+
+.people-input img {
+  width: 13px;
+  height: 16px;
+}
+
+.bill-input img,
+.people-input img {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+}
+
+.tip-grid {
+  margin: 16px 0 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 17px;
+  row-gap: 16px;
+}
+
+.tip-grid button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 6px 17.55px 6px 16.29px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.tip-section {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  padding: 37px 22px 24px 24px;
+  border-radius: 15px;
+}
+
+.tip-amount,
+.total-amount {
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tip-amount {
+  margin-bottom: 20px;
+}
+
+.total-amount {
+  margin-bottom: 32px;
+}
+
+.grey-person {
+  font-size: 0.8125rem;
+  color: var(--grayish-cyan);
+}
+
+.tip,
+.total {
+  font-size: 2rem;
+  letter-spacing: -0.67px;
+  color: var(--outline-cyan);
+}
 /* .attribution {
     font-size: 11px;
     text-align: center;
