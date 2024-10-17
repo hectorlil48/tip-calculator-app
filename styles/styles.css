@@ -30,6 +30,18 @@ html {
   text-size-adjust: none;
 }
 
+/* Remove spinner arrows in number inputs on Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinner arrows in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 button,
 input {
   font-family: inherit;
@@ -62,13 +74,12 @@ label {
   font-size: 1rem;
   font-weight: 700;
   color: var(--dark-grayish-cyan);
-  margin-bottom: 6px;
 }
 
 .bill-input,
 .people-input {
   position: relative;
-  margin-bottom: 32px;
+  margin: 6px 0px 32px;
 }
 
 .bill-input input,
@@ -219,6 +230,18 @@ label {
     grid-template-columns: repeat(2, 1fr);
     gap: 48px;
     padding: 32px 32px 32px 48px;
+  }
+
+  .inputs-section {
+    margin-top: 13px;
+  }
+
+  .bill-input {
+    margin-bottom: 40px;
+  }
+
+  .people-input {
+    margin-bottom: 0;
   }
 
   .tip-grid {
