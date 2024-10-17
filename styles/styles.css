@@ -196,10 +196,60 @@ label {
 .reset-btn:where(:hover, :focus) {
   background-color: var(--hover-grayish-cyan);
 }
-/* .attribution {
-    font-size: 11px;
-    text-align: center;
+
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 10px 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 920px) {
+  header img {
+    margin: 163px auto 88px;
   }
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  } */
+
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    padding: 32px 32px 32px 48px;
+  }
+
+  .tip-grid {
+    margin-bottom: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 14px;
+  }
+
+  .tip-grid button {
+    padding: 6px 14px 6px 13px;
+  }
+
+  .tip-grid input {
+    padding: 6px 15px 6px 14px;
+  }
+
+  .tip-section {
+    padding: 40px;
+  }
+
+  .tip-amount {
+    margin-bottom: 25px;
+  }
+
+  .total-amount {
+    margin-bottom: 122px;
+  }
+
+  .tip,
+  .total {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+}
