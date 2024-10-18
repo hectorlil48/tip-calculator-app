@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -12,7 +10,6 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles/styles.css" />
-
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
@@ -30,32 +27,38 @@
 
         <label for="select-tip">Select Tip %</label>
         <div class="tip-grid">
-          <button>5%</button>
-          <button>10%</button>
-          <button>15%</button>
-          <button>25%</button>
-          <button>50%</button>
-          <input type="number" placeholder="Custom" id="custom" />
+          <button class="tip-btn" data-tip="5">5%</button>
+          <button class="tip-btn" data-tip="10">10%</button>
+          <button class="tip-btn" data-tip="15">15%</button>
+          <button class="tip-btn" data-tip="25">25%</button>
+          <button class="tip-btn" data-tip="50">50%</button>
+          <input type="number" placeholder="Custom" id="customTip" />
         </div>
 
-        <label for="people">Number of People</label>
+        <div class="people-label">
+          <label for="people">Number of People</label>
+          <span id="peopleError" class="error-message"></span>
+        </div>
+        <!-- Error Message -->
         <div class="people-input">
           <input type="number" placeholder="0" id="people" />
           <img src="./images/icon-person.svg" alt="person icon" />
         </div>
       </div>
+
       <div class="tip-section">
         <div class="tip-amount">
           <p>Tip Amount <br /><span class="grey-person">/ person</span></p>
-          <p class="tip">$0.00</p>
+          <p class="tip" id="tipAmount">$0.00</p>
         </div>
         <div class="total-amount">
           <p>Total <br /><span class="grey-person">/ person</span></p>
-          <p class="total">$0.00</p>
+          <p class="total" id="totalAmount">$0.00</p>
         </div>
-        <button class="reset-btn" id="resetBtn">Reset</button>
+        <button class="reset-btn" id="resetBtn" disabled>Reset</button>
       </div>
     </main>
+
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
@@ -66,6 +69,6 @@
       >.
     </footer>
 
-    <script src="./scirpt/main.js"></script>
+    <script src="scirpt/main.js"></script>
   </body>
 </html>

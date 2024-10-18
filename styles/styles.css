@@ -37,11 +37,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Remove spinner arrows in Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
 button,
 input {
   font-family: inherit;
@@ -98,9 +93,32 @@ label {
   cursor: pointer;
 }
 
+.people-input input:invalid {
+  outline-color: red;
+}
+
 .bill-input input::placeholder,
 .people-input input::placeholder {
   color: var(--very-dark-cyan);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.bill-input input:not(:placeholder-shown)::placeholder,
+.people-input input:not(:placeholder-shown)::placeholder {
+  opacity: 1;
+}
+
+.people-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  display: none; /* Hidden by default */
 }
 
 .tip-grid input {
@@ -202,6 +220,12 @@ label {
   color: var(--very-dark-cyan);
   padding: 9px 32px;
   margin: 0 auto;
+  opacity: 0.3; /* Barely visible by default */
+  transition: opacity 0.3s;
+}
+
+.reset-btn:disabled {
+  cursor: not-allowed;
 }
 
 .reset-btn:where(:hover, :focus) {
