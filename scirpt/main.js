@@ -20,19 +20,21 @@ function resetPeopleInputError() {
 
 // Function to calculate tip and total per person
 function calculateAmounts() {
-  // Validate "Number of People" input
-  if (peopleInput.value.trim() === "" || peopleInput.value <= 0) {
-    peopleInput.style.outlineColor = "red"; // Show red outline
-    peopleError.textContent = "Can't be zero"; // Show error message
-    peopleError.style.display = "inline"; // Make the error message visible
-    return; // Prevent calculations if the input is invalid
-  }
+  // Check if bill and tip are valid
+  if (billValue > 0 && tipPercentage > 0) {
+    // Validate "Number of People" input
+    if (peopleInput.value.trim() === "" || parseFloat(peopleInput.value) <= 0) {
+      peopleInput.style.outlineColor = "red"; // Show red outline
+      peopleError.textContent = "Can't be zero"; // Show error message
+      peopleError.style.display = "inline"; // Make the error message visible
+      return; // Prevent calculations if the input is invalid
+    }
 
-  // Reset error state if valid
-  resetPeopleInputError();
+    // Reset error state if valid
+    resetPeopleInputError();
 
-  // Proceed with calculations if inputs are valid
-  if (billValue > 0 && peopleValue > 0) {
+    // Proceed with calculations
+    const peopleValue = parseFloat(peopleInput.value); // Safely get the value
     const tipAmountPerPerson =
       (billValue * (tipPercentage / 100)) / peopleValue;
     const totalPerPerson = billValue / peopleValue + tipAmountPerPerson;
@@ -62,14 +64,14 @@ function updateResetButtonVisibility() {
 
 // Validate "Number of People" input and show error if invalid
 function validatePeopleInput() {
-  if (!peopleInput.value || peopleInput.value <= 0) {
+  const peopleValue = parseFloat(peopleInput.value);
+  if (!peopleInput.value || peopleValue <= 0) {
     peopleInput.style.outlineColor = "red"; // Show red outline
     peopleError.textContent = "Can't be zero"; // Show error message
     peopleError.style.display = "inline"; // Make the error message visible
   } else {
-    resetPeopleInputError();
-    peopleValue = parseFloat(peopleInput.value) || 1; // Update value
-    calculateAmounts();
+    resetPeopleInputError(); // Clear error if valid
+    calculateAmounts(); // Proceed with calculation
   }
 }
 
