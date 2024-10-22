@@ -181,11 +181,14 @@ label {
 
 .tip-amount,
 .total-amount {
-  font-size: 1rem;
-  font-weight: 700;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.tip-amount h1,
+.total-amount h1 {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .tip-amount {
